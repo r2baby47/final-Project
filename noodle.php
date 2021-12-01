@@ -41,14 +41,13 @@
         <div class="heading">
             <p>เมนูอาหาร</p>
         </div>
+        <div class="menu_container">
         <?php 
                     $select_stmt = $db->prepare('SELECT * FROM tbl_file'); 
                     $select_stmt->execute();
-
                     while ($row = $select_stmt->fetch(PDO::FETCH_ASSOC)) {
                 ?>
-        <div class="menu_container">
-    <section>
+                
             <div class="grid-menu">
                 <img src="upload/<?php echo $row['image']; ?>" alt="">
                 <h3><?php echo $row['name']; ?></h3>
@@ -57,8 +56,9 @@
                 <p>จัมโบ้          35 บาท</p>
             </div>
 
-        </div>
+
         <?php } ?>
+        </div>
     </section>
 
     <!-- body section end-->
